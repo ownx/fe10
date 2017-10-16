@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="seen">我被显示了</div>
+        <div :id="id">id的值为{{id}}</div>
+        <!-- <img src="https://cn.vuejs.org/images/logo.png" alt=""> -->
+        <!-- 绑定一个属性 -->
+        <!-- <img v-bind:src="imgs" alt=""> -->
+        <!-- 缩写 -->
+        <img :src="imgs" alt="">
+
+    </div>
+
+</body>
+<script>
+    let data = {
+        msg: 'hello stark',
+        seen: true,
+        id: 8000,
+        imgs: 'https://cn.vuejs.org/images/logo.png'
+    }
+
+    let vm = new Vue({
+        el: '#app',
+        data: data
+    })
+</script>
+
+</html>

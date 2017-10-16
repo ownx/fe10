@@ -31,4 +31,9 @@ git clone  https://github.com/itguide/fe10.git .
 ## 场景：把代码仓库更新
 
     把仓库代码更新
+```
     git pull origin master
+```
+
+常用命令：
+    git remote -v #查看本地的库的远程地址
