@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+
+</head>
+
+<body>
+    <!-- 参考 -->
+    <!-- https://cn.vuejs.org/v2/api/#v-on -->
+    <div id="app">
+        {{arr}}
+        <button v-on:click="show">show</button>
+        <button v-on:mouseover="show">鼠标经过</button>
+        <button v-on:dblclick="show">双击</button>
+        <button @click="add(555)">add</button>
+
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            arr: ['12', '33', '32', '323232']
+        },
+        methods: {
+            show: function() {
+                console.log("调用了show方法");
+            },
+            add(data) {
+                this.arr.push(data)
+            }
+        }
+    })
+</script>
+
+</html>
