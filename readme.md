@@ -6,7 +6,4 @@
 segmentfault 地址：
 https://segmentfault.com/u/itnote/articles 
 
-展示互动：
-http://ucai.gensee.com/training/site/s/39575249
 
-口令：ucaih5002
