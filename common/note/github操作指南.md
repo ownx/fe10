@@ -69,3 +69,10 @@ git.oschina.net
 coding.net
 https://gitee.com/
 内部公司自己搭建
+
+
+git pull origin vueday2
+
+git fetch origin 
+ 
+git checkout vueday2
