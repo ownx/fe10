@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/1.3.4/vue-resource.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        github:Id : <input type="text" v-model="uid">
+        <button @click="getGitUser(uid)">获取指定的github帐号信息并且显示 </button>
+
+        <button @click="postGoods"> post 请求</button>
+        <img :src="user.avatar_url" alt=""> 姓名：{{user.name}}
+        <input type="text" v-model="word" @keyup="jsonp">
+        <ul>
+            <li v-for="item in myData">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#box',
+        data: {
+            user: {},
+            uid: '',
+            word: '',
+            myData: ''
+        },
+        methods: {
+            getGitUser: function(uid) {
+                this.$http.get(`https://api.github.com/users/${uid}`)
+                    .then(res => {
+                        console.log(res);
+                        this.user = res.data
+                    })
+            },
+            jsonp: function() {
+                this.$http.jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su", {
+                    params: {
+                        wd: this.word
+                    },
+                    jsonp: 'cb'
+                }).then(function(res) {
+                    console.log(res);
+                    this.myData = res.data.s;
+                })
+            },
+            postGoods: function() {
+                this.$http.post('http://easy-mock.com/mock/59664d4d58618039284c7710/example/goods/list')
+                    .then(res => {
+                        console.log(res);
+                    })
+            }
+        }
+    })
+</script>
+
+</html>
