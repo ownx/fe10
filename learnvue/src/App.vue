@@ -5,8 +5,11 @@
     <a href="/work">工作</a>
 
     <router-link exact to="/">home主页</router-link>
-    <router-link to="/work">我的工作</router-link>
-    <router-link to="/stark">我的Stark</router-link>
+    <router-link to="/work" active-class="starkwang">我的工作</router-link>
+    <router-link to="/stark" tag="li">我的Stark</router-link>
+    <router-link to="/user/2/profile" tag="li">我的profile</router-link>
+    <router-link to="/user/4/posts" tag="li">我的posts</router-link>
+    
     <router-view/>
   </div>
 </template>
@@ -27,6 +30,9 @@ export default {
   margin-top: 60px;
 }
 .router-link-active{
-    background-color:red
+    background-color:red;
+}
+.starkwang{
+    background-color:#de3b8b;
 }
 </style>
