@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Work from '@/components/Work'
 import Stark from '@/components/Stark'
 import User from '@/components/User'
+import Hero from '@/views/hero'
 
 Vue.use(Router)
 const UserProfile = { template: `<div> 我是profile 组件 </div>` };
@@ -28,6 +29,11 @@ export default new Router({
             path: '/',
             name: 'Hello',
             component: HelloWorld
+        },
+        {
+            path: '/hero',
+            name: 'Hero',
+            component: Hero
         },
         {
             path: '/work',

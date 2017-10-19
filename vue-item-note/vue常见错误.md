@@ -5,6 +5,16 @@ npm err! C:\User\1x\Desktop\package.json
 no such file or directory open 'C: package.json"
 
 
+8080 端口被占用：
+
+netstat -ano | grep 8080
+
+查看pid 6324
+
+然后打开任务管理器
+进程 找到这个 6324进程 结束进程
+
+
 
 解决问题的框架
 看到错误先做什么？
@@ -15,7 +25,7 @@ no such file or directory open 'C: package.json"
     提取前几条
     segmentfault.com
     https://stackoverflow.com
-    
+
 5.真正自己花精力与时间研究过这个问题，还没解决，带着自己百度或者搜索过的信息，去向别人求助。
 
 
