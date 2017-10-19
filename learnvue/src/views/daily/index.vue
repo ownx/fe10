@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import axios from 'axios';
+    // import axios from 'axios';
 
     export default {
         data(){
@@ -18,13 +18,21 @@
             }
         },
         created(){
-            this.getHero()
+            this.getHttpHero()
         },
         methods:{
             getHero(){
                 // https://news-at.zhihu.com/api/4/news/latest
                 // axios.get('http://hero.shudong.wang/v1/db.php')
                 axios.get('/api/news/latest')
+                .then(res=>{
+                    this.stories = res.data.stories;
+                })
+            },
+            getHttpHero(){
+                // https://news-at.zhihu.com/api/4/news/latest
+                // axios.get('http://hero.shudong.wang/v1/db.php')
+                this.$http.get('/api/news/latest')
                 .then(res=>{
                     this.stories = res.data.stories;
                 })

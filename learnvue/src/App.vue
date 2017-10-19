@@ -5,6 +5,7 @@
     <a href="/work">工作</a>
 
     <router-link exact to="/">home主页</router-link>
+    <router-link exact to="/increment">加减法</router-link>
     <router-link to="/work" active-class="starkwang">我的工作</router-link>
     <router-link to="/daily" active-class="starkwang">知乎日报</router-link>
     <router-link to="/hero" active-class="starkwang">hero</router-link>
