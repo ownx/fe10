@@ -7,13 +7,11 @@
         <input type="button" value="+" @click="addHandle(2)">
             {{name}},{{age}},
             {{num2}}
-
-            getters{{count}}
     </div>
   </div>
 </template>
 <script>
-    import { mapState,mapGetters,mapActions} from 'vuex'
+    import { mapState } from 'vuex'
     export default{
         // data(){
         //     return{
@@ -53,31 +51,24 @@
                      return this.$store.state.age
                  }
             }),
-            ...mapGetters({
-                count:'count'
-            }),
             num2(){
                 return this.$store.getters.count
             }
         },
         methods:{
-            // addHandle(num){
-            //     // this.num += 5;
-            //     // 通过这提交一个mutations，commit 里面提交的第一个参数就是mutations 里面的函数名字
-            //     // this.$store.commit('AddIncrement',{n:num,name:'stark'})
+            addHandle(num){
+                // this.num += 5;
+                // 通过这提交一个mutations，commit 里面提交的第一个参数就是mutations 里面的函数名字
+                // this.$store.commit('AddIncrement',{n:num,name:'stark'})
                 
-            //     // this.$store.commit({
-            //     //     type:'AddIncrement',
-            //     //     num:5,
-            //     //     name:'stark'
-            //     // })
+                // this.$store.commit({
+                //     type:'AddIncrement',
+                //     num:5,
+                //     name:'stark'
+                // })
 
-            //     this.$store.dispatch('addAction');
-            // },
-
-            ...mapActions({
-                addHandle:'addAction'
-            }),
+                this.$store.dispatch('addAction');
+            },
             minHandle(num){
                 // this.num -= 5;
                 // this.$store.commit('MinIncrement',num)

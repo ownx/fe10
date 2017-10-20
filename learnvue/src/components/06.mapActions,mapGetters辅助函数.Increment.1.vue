@@ -36,7 +36,7 @@
         // computed:mapState({
         //     // num:state=> state.num, //写法1
         //     // num:'num' // 写法2
-        //     num(state){
+        //     num(state){ //写法三
         //         return state.num + 100;
         //     }
         // }),
